@@ -1,18 +1,35 @@
 /* Be Vietnam, Dosis, Josefin, Arvo */
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Be+Vietnam&family=Dosis&family=Josefin+Sans&display=swap');
 
+/* Globals */
+
+:root { /* Store variables in here */
+  --nav-height: 48px;
+  --nav-dark: #333333;
+  --bg-dark: #212121;
+}
+
 body, html {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #212121;
-  font-family: Verdana;
   color: white;
+  background: var(--bg-dark);
+
+  font-family: Verdana;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.inspiration {
+  font-size: 40px;
+}
 /* Fonts */
+
 .vietnam {
   font-family: Be Vietnam;
 }
@@ -39,43 +56,102 @@ body {
 
 /* Navbar */ 
 
-.navbar {
-  background: #333333;
+/* 
+Also add somewhite space to the css so its easier to understand
+what is what
+*/
+.navbar { 
+  display: flex;
+
+  width: 99%;
+  height: var(--nav-height);
+
+  background: var(--nav-dark);
+  box-shadow: 2px 3px 5px 4px #161616be;
+
   padding: 4px;
-  width: 98%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 8px;
+
   border-radius: 6px;
-  display: flex;
-  align-content: center;
+
+  justify-content: space-between; /* Adds space between the left and right item */
+  align-items: center; /* Aligns all content to be horizontally and vertically centered */
 }
+
 .navbar-title {
   font-size: 24px;
   font-weight: 500;
+
+  padding: 4px;
+  margin-left: 2px;
+}
+
+.navbar-title a {
+  text-decoration: none;
+  color: white;
 }
 
 .nav-items {
   margin-left: auto;
+
+  padding: 10px;
 }
 
 .nav-item {
   text-decoration: none;
   color: white;
-  margin-left: 16px;
+
+  padding: 15px;
+
+  margin-left: 6px;
   margin-right: 4px;
 }
 
+.nav-item:hover {
+  background-color: #21212163;
+  opacity: 0.7;
+}
 
 .domain {
   color: #e3ed21;
 }
+
 /* Cards */
+
 .card {
   width: 60%;
-  margin: auto;
+
   border-radius: 8px;
-  padding: 16px;
+
   background: #212121;
   box-shadow:  12px 12px 21px #1a1a1a, -12px -12px 21px #282828;
+
+  margin: auto;
+  padding: 16px;
+  
+}
+
+.card-matte-container {
+  display: flex;
+}
+
+.card-matte {
+  flex: 1;
+  
+  background: var(--nav-dark);
+  box-shadow: 2px 3px 6px 5px #13131367;
+  
+  margin: 8px;
+  padding: 12px;
+  
+  border-radius: 8px;
+  transition: 0.5s;
+}
+
+ /* Transitions */
+.card-matte:hover {
+  padding: 16px; /* SATISFYING*/
+  background: rgb(105, 105, 105);
 }

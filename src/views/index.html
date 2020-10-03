@@ -8,19 +8,18 @@
   <script src="/js/script.js"></script>
 </head>
 <body>
-  <!-- will be moved to ejs soon -->
-  <div class = "navbar">
-    <span class = "navbar-title">ClearCode<span class = "domain">.tk</span></span>
-    <div class = "nav-items">
-      <a href = "#" class = "nav-item">Home</a>
-      <a href = "#" class = "nav-item">About</a>
-      <a href = "#" class = "nav-item">Resources</a>
-      <a href = "#" class = "nav-item">Profile</a>
+  <%- navbar %>
+  <h1 class = "dosis bold center inspiration">The future of coding is here</h1>
+  <div class = "card-matte-container">
+    <div class="card-matte">
+      <h2 class = "center arvo">Efficiency Matters!</h2>
+      <p class = "vietnam">When designing ClearCode, we thought about conserving energy use. Instead of using a light theme by default, we thought using a dark theme that had pixels turn off for AMOLED display would prevent you from having to consume tons of energy.</p>
+      <a class = "main-button"></a>
     </div>
-  </div>
-  <h1 class = "dosis bold center">The future of coding is here</h1>
-  <div class = "card">
-    hello world
+    <div class="card-matte">
+      <h2 class = "arvo center">Collaborative, Low Latency; <i>Smooth</i></h2>
+      <p class = "vietnam">We know that an IDE isn't itself unless we have a multiplayer function built in. We realized that a few of the ones that we use aren't that great, hence why we build a very low latency. You will see very satisfying animations when someone adds to te code, along wit nice cursor recognition.</p>
+    </div>
   </div>
 </body>
 </html>

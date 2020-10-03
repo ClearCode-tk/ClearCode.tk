@@ -1,9 +1,9 @@
 // Dependencies //
 const express = require('express'),
-	app = express(),
-	ejs = require('ejs'),
-	server = require('http').createServer(app),
-	io = require('socket.io')(server);
+  app = express(),
+  ejs = require('ejs'),
+  server = require('http').createServer(app),
+  io = require('socket.io')(server);
 
 // Modules //
 const Path = require('path');
@@ -22,4 +22,9 @@ app.use(express.json());
 app.use('/', express.static(Path.join(__dirname, './src/public')));
 app.use(mainPages()); // Main routings for home, login, signup, etc.
 
+//socket.io events
+require('./websockets/socket')(io);
+
 server.listen(3000, _ => console.log('Listening on port 3000'));
+
+console.clear();
