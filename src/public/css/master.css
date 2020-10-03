@@ -1,0 +1,81 @@
+/* Be Vietnam, Dosis, Josefin, Arvo */
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Be+Vietnam&family=Dosis&family=Josefin+Sans&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #212121;
+  font-family: Verdana;
+  color: white;
+}
+
+/* Fonts */
+.vietnam {
+  font-family: Be Vietnam;
+}
+
+.arvo {
+  font-family: Arvo;
+}
+
+.dosis {
+  font-family: Dosis;
+}
+
+.josefin {
+  font-family: Josefin Sans;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Navbar */ 
+
+.navbar {
+  background: #333333;
+  padding: 4px;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-content: center;
+}
+.navbar-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.nav-items {
+  margin-left: auto;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  margin-left: 16px;
+  margin-right: 4px;
+}
+
+
+.domain {
+  color: #e3ed21;
+}
+/* Cards */
+.card {
+  width: 60%;
+  margin: auto;
+  border-radius: 8px;
+  padding: 16px;
+  background: #212121;
+  box-shadow:  12px 12px 21px #1a1a1a, -12px -12px 21px #282828;
+}

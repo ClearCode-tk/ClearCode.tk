@@ -1,3 +1,4 @@
+const { dbURL, db, users } = require("../firebase/firebase"); // Import db
 const express = require('express');
 const ejsData = require('./ejs');
 
