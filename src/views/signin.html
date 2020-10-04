@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- defaultLibs %>
+  <title>Document</title>
+</head>
+<body>
+  <%- navbar %>
+  <h1 class='center vietnam'>Sign in</h1>
+  <form id="signin-form" class="form card" action="/signin" method="POST">
+    <span>Email: <br/><input type="text" id="signin-fname" name="email" /></span><br/>
+    <span>Password: <br/><input type="password" id="signin-pw" name="password" /></span><br/>
+    <button type="submit">Sign In</button>
+  </form>
+  <p class="sign-up center">Clicked the wrong button? <a href="/signup">Sign up!</a></p>
+  <%- defaultScripts %>
+</body>
+</html>

@@ -118,6 +118,49 @@ what is what
   color: #e3ed21;
 }
 
+@media screen and (min-width: 700px) {
+  .nav-burger {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .nav-items {
+    display: none;
+  }
+}
+
+/* Mobile Nav */
+
+#mobile-links {
+  display: none;
+
+  width: 95vw;
+  padding: 12px;
+
+  background-color: var(--nav-dark);
+
+  margin-top: 12px;
+  margin: auto;
+}
+
+#mobile-links a {
+  display: block;
+
+  text-decoration: none;
+  color: white;
+
+  padding: 15px;
+}
+
+.nav-burger {
+  color: white;
+
+  margin-right: 12px;
+
+  cursor: pointer;
+}
+
 /* Cards */
 
 .card {
@@ -150,8 +193,24 @@ what is what
   transition: 0.5s;
 }
 
- /* Transitions */
+ /* Card Transitions */
+
 .card-matte:hover {
   padding: 16px; /* SATISFYING*/
   background: rgb(105, 105, 105);
+}
+
+/* Forms */
+
+.form input {
+  padding: 4px;
+  font-size: 14px;
+  width: 99%;
+  border: none;
+}
+
+.form span {
+  font-size: 16px;
+  margin-bottom: 4px;
+  
 }

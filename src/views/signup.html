@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- defaultLibs %>
+  <title>Document</title>
+</head>
+<body>
+  <%- navbar %>
+
+  <h1 class="vietnam center">Sign up</h1>
+  <form id="signup-form" class="form card" action="/signup" method="POST">
+    <span>First Name <br/> <input type="text" id="signup-fname" name="firstname" required /></span><br/>
+    <span>Last Name <br/><input type="text" id="signup-lname" name="lastname" required /></span><br/>
+    <span>Username: <br/><input type="text" id="signup-un" name="username" required /></span><br/>
+    <span>Email: <br/><input type="email" id="signup-email" name="email" required /></span><br/>
+    <span>Password: <br/><input type ="password" id="signup-pw" name="password" required /></span><br/>
+    <span>Confirm Password: <br/><input type="password" id="signup-cpw" name="confpassword" required /></span><br/>
+    <span>Upload a Profile Picture: <input type="file" name="pfp" /></span>
+    <button type="submit">Create</button>
+  </form>
+  <p class="sign-in center">Already have an account? <a href="/signin">Sign in!</a></p>
+
+  <%- defaultScripts %>
+</body>
+</html>

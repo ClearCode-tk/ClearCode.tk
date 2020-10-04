@@ -1,0 +1,17 @@
+<header class = "navbar">
+  <span class = "navbar-title">
+    <a href="/">ClearCode<span class = "domain">.tk</span></a>
+  </span>
+  
+  <nav class = "nav-items">
+    <a href="#" class="nav-item">Home</a>
+    <a href="#" class="nav-item">About</a>
+    <a href="#" class="nav-item">Resources</a>
+    <% if (!user || !user.userData) { %>
+      <a href="/signup" class="signin-btn nav-item">Sign Up/In</a>
+    <% } else { %>
+      <a href="#" class="nav-item"><%= user.userData.username %></a>
+    <% } %>
+  </nav>
+  <a class="nav-burger"><i class="material-icons">menu</i></a>
+</header>

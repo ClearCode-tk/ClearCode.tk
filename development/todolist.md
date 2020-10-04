@@ -1,11 +1,11 @@
 ### Basic TODO List
 
 1. [x] Create codebase
-2. [ ] Setup Database
-3. [ ] Create Basic Landing Page
-    - [ ] Add additional styling
-    - [ ] Add moto, title, and various buttons
-    - [ ] Make it nice, clean, and modern
+2. [x] Setup Database
+3. [x] Create Basic Landing Page
+    - [x] Add additional styling
+    - [x] Add moto, title, and various buttons
+    - [x] Make it nice, clean, and modern
 4. [ ] Create Login Page
     - [ ] Add additional styling
     - [ ] Make it nice, clean, and modern
@@ -13,4 +13,13 @@
     - [ ] Add additional styling
     - [ ] Make it nice, clean, and modern
 5. [ ] Create native things
-    - [ ] call a single project something
+    - [ ] Call a single project something
+6. [ ] Create basic project Creator / Editor
+    - [ ] Add DB control and editor control
+    - [ ] Working terminal
+    - [ ] Mobile and desktop editors
+    - [ ] Multiplayer editor
+    - [ ] Autosave on type
+7. [ ] Create Basic Resources Page
+  - [ ] Add additional styling
+  - [ ] Make it nice, clean, and modern

@@ -2,6 +2,8 @@
 //add more files as needed
 const admin = require("firebase-admin");
 const {
+  COOKIESECRET,
+
   type,
   project_id,
   private_key_id,
@@ -37,9 +39,11 @@ admin.initializeApp({
 
 const db = admin.firestore(); // initialize db with cloud firestore
 const users = db.collection("users"); // create users collection
+const emails = db.collection("emails");
 
 module.exports = {
   db,
   users,
+  emails,
   dbURL
 };

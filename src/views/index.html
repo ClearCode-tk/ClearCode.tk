@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- defaultLibs %>
   <title>Document</title>
-  <link rel="stylesheet" href="/css/master.css" />
-  <script src="/js/script.js"></script>
 </head>
 <body>
-  <%- navbar %>
+  <%- include("data/navbar") %>
+  <%- mobilelinks %>
+  
   <h1 class = "dosis bold center inspiration">The future of coding is here</h1>
   <div class = "card-matte-container">
     <div class="card-matte">
@@ -21,5 +20,27 @@
       <p class = "vietnam">We know that an IDE isn't itself unless we have a multiplayer function built in. We realized that a few of the ones that we use aren't that great, hence why we build a very low latency. You will see very satisfying animations when someone adds to te code, along wit nice cursor recognition.</p>
     </div>
   </div>
+  <div class = "card-matte-container">
+    <div class = "card-matte">
+      <h2 class = "arvo center">This is ClearCode, taken to the next level</h2>
+      <p>(Text to show the fact that generation 3 is very good)</p>
+    </div>
+  </div>
+  <div class = "card-matte-container">
+    <div class = "card-matte">
+      <h2 class = "arvo center">Multiplayer Benefits</h2>
+      <p>(Image to show multiplayer benefits)</p>
+    </div>
+    <div class = "card-matte">
+      <h2 class = "arvo center">Beautiful Highlighting</h2>
+      <p>Show syntax highlighting</p>
+    </div>
+    <div class = "card-matte">
+      <h2 class = "arvo center">Friendly User Interface</h2>
+      <p>Show user interface</p>
+    </div>
+  </div>
+
+  <%- defaultScripts %>
 </body>
 </html>
