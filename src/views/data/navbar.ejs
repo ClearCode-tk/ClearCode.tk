@@ -7,11 +7,21 @@
     <a href="#" class="nav-item">Home</a>
     <a href="#" class="nav-item">About</a>
     <a href="#" class="nav-item">Resources</a>
-    <% if (!user || !user.userData) { %>
+    <% if (typeof user !== "object" || !user.userData) { %>
       <a href="/signup" class="signin-btn nav-item">Sign Up/In</a>
     <% } else { %>
-      <a href="#" class="nav-item"><%= user.userData.username %></a>
+      <a href="/@<%= user.userData.fulluser %>" class="nav-item"><%= user.userData.username %></a>
     <% } %>
   </nav>
   <a class="nav-burger"><i class="material-icons">menu</i></a>
 </header>
+<section id="mobile-links">
+  <a href="/">Home</a>
+  <a href="#">About</a>
+  <a href="#">Resources</a>
+  <% if (typeof user !== "object" || !user.userData) { %>
+    <a href="/signup" class="signin-btn">Sign Up/In</a>
+  <% } else { %>
+    <a href="/@<%= user.userData.fulluser %>"><%= user.userData.username %></a>
+  <% } %>
+</section>

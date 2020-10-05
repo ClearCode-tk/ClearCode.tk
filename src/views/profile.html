@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- defaultLibs %>
+  <title>Document</title>
+</head>
+<body>
+  <%- include("data/navbar") %>
+  
+  <h1 class = "center arvo inspiration"><span class = "pink">@</span><%= profile.username %></h1>
+  <p class = "center arvo name"><%= profile.firstname%> <%= profile.lastname%></p>
+  <br/>
+  <p>Highlighted Clodes:</p>
+
+  <%- defaultScripts %>
+</body>
+</html>

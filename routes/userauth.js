@@ -74,15 +74,16 @@ const userAuth = {
   configureDefaults: (options = {}) => Object.assign({ type: "login", redirect: "/", cookies: [{ dataKey: "uid", cookie: "CCUID" }, { dataKey: "password", cookie: "CCP" }] }, options)
 };
 
-userAuth.createUser = async ({ firstname, lastname, username, email, password, confpassword, pfp }) => {
+userAuth.createUser = async (data) => {
+  let { firstname, lastname, username, email, password, confpassword, pfp } = data;
   if (password !== confpassword) return { success: false, status: 403, msg: "Passwords do not match!" };
   if (!email) return { success: false, status: 403, msg: "No email given. Please enter email!" };
   if (!firstname || !lastname) return { success: false, status: 403, msg: "No first or last name. Please enter fullname!" };
 
-  const emailDoc = emails.doc(email);
-  const emailExists = (await emailDoc.get()).exists;
+  const emailDoc = emails.doc(email); // Get email in emails list
+  const emailExists = (await emailDoc.get()).exists; // Check if it exists already
   
-  if (emailExists) {
+  if (emailExists) { // If it exists then error out
     return {
       success: false,
       status: 403,
@@ -90,14 +91,19 @@ userAuth.createUser = async ({ firstname, lastname, username, email, password, c
     };
   }
 
-  const uid = genID(15);
-  const hashedPass = await bcrypt.hash(password, await bcrypt.genSalt());
+  const uid = genID(15); // Generate a 15 digit uid
+  const usernum = genID(4); // Generate a 4 digit tag for the username
+  const fulluser = `${username}-${usernum}`;
 
-  const userData = users.doc(uid);
+  const userData = users.doc(fulluser);
+  if ((await userData.get()).exists) return userAuth.createUser(data);
+
+  const hashedPass = await bcrypt.hash(password, await bcrypt.genSalt());
 
   // Response of userdata in database
   const userRes = await userData.set({
     uid,
+    fulluser,
     username,
     email,
     firstname,
@@ -107,6 +113,7 @@ userAuth.createUser = async ({ firstname, lastname, username, email, password, c
 
   // Response of creating an email value in database
   const emailRes = await emailDoc.set({
+    fulluser,
     username,
     email,
     firstname,
@@ -124,6 +131,7 @@ userAuth.createUser = async ({ firstname, lastname, username, email, password, c
       email,
       firstname,
       lastname,
+      fulluser,
       hashedPass,
       password
     }
@@ -182,7 +190,7 @@ userAuth.ezAuth = (req, res, next) => {
 
 // Register account via signed cookies
 userAuth.registerAccount = (res, data) => {
-  const { uid, normalPass } = data;
+  const { uid } = data;
 
   res.cookie("CCUID", uid, { signed: true });
   // res.cookie("CCP", normalPass, { signed: true }); // Probably not secure but I will make it something else
@@ -222,7 +230,6 @@ module.exports = {
       if (userData) {
         userAuth.registerAccount(res, {
           uid: userData.id,
-          normalPass: password,
           email,
           ...userData
         });

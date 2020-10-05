@@ -5,16 +5,16 @@
   <title>Document</title>
 </head>
 <body>
-  <%- navbar %>
+  <%- include("data/navbar") %>
 
   <h1 class="vietnam center">Sign up</h1>
   <form id="signup-form" class="form card" action="/signup" method="POST">
-    <span>First Name <br/> <input type="text" id="signup-fname" name="firstname" required /></span><br/>
-    <span>Last Name <br/><input type="text" id="signup-lname" name="lastname" required /></span><br/>
-    <span>Username: <br/><input type="text" id="signup-un" name="username" required /></span><br/>
-    <span>Email: <br/><input type="email" id="signup-email" name="email" required /></span><br/>
-    <span>Password: <br/><input type ="password" id="signup-pw" name="password" required /></span><br/>
-    <span>Confirm Password: <br/><input type="password" id="signup-cpw" name="confpassword" required /></span><br/>
+    <span>First Name <br/> <input type="text" id="signup-fname" name="firstname" placeholder="Enter First Name" required /></span><br/>
+    <span>Last Name <br/><input type="text" id="signup-lname" name="lastname" placeholder="Enter Last Name" required /></span><br/>
+    <span>Username: <br/><input type="text" id="signup-un" name="username" placeholder="Enter Username" required /></span><br/>
+    <span>Email: <br/><input type="email" id="signup-email" name="email" placeholder="Enter Email" required /></span><br/>
+    <span>Password: <br/><input type ="password" id="signup-pw" name="password" placeholder="Enter Password" required /></span><br/>
+    <span>Confirm Password: <br/><input type="password" id="signup-cpw" name="confpassword" placeholder="Retype Password" required /></span><br/>
     <span>Upload a Profile Picture: <input type="file" name="pfp" /></span>
     <button type="submit">Create</button>
   </form>

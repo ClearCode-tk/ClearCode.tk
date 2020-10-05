@@ -1,3 +1,5 @@
+const socket = io.connect();
+
 // Navbar //
 
 const mobileLinks = document.querySelector("#mobile-links");
