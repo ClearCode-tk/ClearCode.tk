@@ -1,0 +1,11 @@
+{
+  "Machines": {
+    "Available": {},
+    "Unavailable": {
+      "CCVM-1": {
+        "machineName": "CCVM-1",
+        "url": "https://ccvm-1.clearcode.repl.co"
+      }
+    }
+  }
+}

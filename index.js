@@ -10,8 +10,7 @@ const Path = require('path');
 
 // Main Code //
 const { NormalError, handleErrors, handle404 } = require("./middleware/errorHandling/errors");
-const { mainPages, userRoutes, userAuth } = require('./routes/routes'); // Basice routes
-// const ejsData = require('./routes/ejs'); // Import ejsdata for simple templating
+const { mainPages, userRoutes, userAuth, ideRoutes, apiRoutes } = require('./routes/routes'); // Basic routes
 
 const { dbURL, db, users } = require('./firebase/firebase'); // Import firebase database
 const port = 8080;
@@ -22,8 +21,11 @@ app.set('views', Path.join('./src/views'));
 
 app.use(express.json());
 app.use('/', express.static(Path.join(__dirname, './src/public')));
+app.use("/node_modules", express.static(Path.join(__dirname, "/node_modules")));
+app.use(apiRoutes());
 app.use(mainPages()); // Main routings for home, login, signup, etc.
 app.use(userRoutes());
+app.use(ideRoutes());
 
 
 app.use(handleErrors);

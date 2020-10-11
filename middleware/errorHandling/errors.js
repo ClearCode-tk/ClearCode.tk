@@ -32,15 +32,6 @@ function handleErrors (err, req, res, next) {
     });
   }
 
-  if (!err) {
-    res.status(404);
-    return RenderPage(res, "404.html", {
-      error: {
-        message: "Page does not exist!"
-      }
-    });
-  }
-
   res.status(500);
   return RenderPage(res, "404.html", {
     error: {

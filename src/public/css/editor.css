@@ -1,0 +1,128 @@
+body, html {
+  width: 99.9vw;
+  height: 100vh;
+}
+
+body > header {
+  width: 100vw;
+  height: 64px;
+
+  background-color: orange;
+}
+
+.grid-view {
+  display: grid;
+
+  grid-template-columns: 50px 1.5fr 4.1fr 2.5fr;
+  grid-template-rows: 100%;
+
+  height: calc(100% - 64px);
+}
+
+#tabs {
+  background-color: rgba(235, 47, 0, 0.945);
+}
+
+#sidebar {
+  background-color: rgba(74, 235, 0, 0.945);
+}
+
+#editor {
+  background-color: rgba(29, 58, 136, 0.945);
+}
+
+#terminal {
+  background-color: rgba(54, 46, 44, 0.945);
+}
+
+/* File Explorer */
+
+#file-explorer {
+  flex: 0 1 auto;
+
+  width: 20vw;
+  height: 100%;
+
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.folder-root {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+}
+
+.folder-root div[type="file"] .content:hover, .folder-root div[type="folder"] .content:hover {
+  background-color: rgba(128, 128, 128, 0.623);
+  cursor: pointer;
+}
+
+.folder-root .imgprefix {
+  flex: 0 0 auto;
+  margin-right: 5px;
+}
+
+.folder-root .imgprefix img {
+  width: 17px;
+  height: 17px;
+}
+
+.folder-root .options {
+  position: relative;
+  margin: auto;
+  margin-right: 5px;
+
+  width: 20px;
+  height: 22px;
+}
+
+.folder-root .options img {
+  width: 20px;
+  height: 22px;
+}
+
+.folder-root .itemname {
+  flex: 1 1 auto;
+}
+
+.folder-root .nested {
+  display: block;
+}
+
+.optionsMenu {
+  position: absolute;
+  z-index: 30;
+
+  width: 145px;
+  height: 175px;
+
+  background-color: rgba(45, 43, 46, 0.938);
+  color: white;
+}
+
+.optionsMenu button {
+  width: 100%;
+  height: 25px;
+
+  border: none;
+  cursor: pointer;
+
+  background-color: transparent;
+  color: white;
+}
+
+.optionsMenu button:hover {
+  background-color: rgba(169, 221, 235, 0.925);
+  color: black;
+}
+
+.selected {
+  background-color: rgba(139, 165, 165, 0.904);
+}

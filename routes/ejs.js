@@ -10,6 +10,17 @@ ejsdata.defaultLibs = `
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js" integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ==" crossorigin="anonymous"></script>
 `;
 
+ejsdata.editorLibs = `
+<link rel="stylesheet" href="/css/editor.css" />
+<!-- X-Term.js -->
+<link rel="stylesheet" href="/node_modules/xterm/css/xterm.css" />
+<script src="/node_modules/xterm/lib/xterm.js"></script>
+<script src="/node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
+
+<!-- Monaco Editor -->
+<script src="/monaco-editor/vs/loader.js"></script>
+`;
+
 // User scripts
 ejsdata.defaultScripts = `
 <script src="/js/script.js"></script>

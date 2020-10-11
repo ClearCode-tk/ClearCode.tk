@@ -67,6 +67,17 @@ function checkLoggedIn(options = { key1: "email", key2: "password" }, res) {
   });
 }
 
+function isAuth(req) {
+  const { SID, CCTrait, CCUID } = req.signedCookies;
+
+  if (SID == CCUID && CCTrait) {
+    const traitObj = JSON.parse(CCTrait);
+    req.userTraits = traitObj;
+
+    return traitObj.uid == SID;
+  } else return false;
+}
+
 // Probably should be a class IDK though //
 
 /* Any page where you want the user to be logged in pass the middleware userAuth.authenticate() in */
@@ -162,10 +173,12 @@ userAuth.validateLogin = (options) => {
   const { redirect } = userAuth.configureDefaults(options);
 
   return async (req, res, next) => {
-    const { CCUID, SID } = req.signedCookies;
-
-    if (SID == CCUID) return true;
-    else return false;
+    if (isAuth(req)) {
+      next();
+    } else {
+      res.redirect(redirect);
+      next();
+    }
   }
 }
 
@@ -192,6 +205,8 @@ userAuth.ezAuth = (req, res, next) => {
 userAuth.registerAccount = (res, data) => {
   const { uid } = data;
 
+  delete data.normalPass;
+
   res.cookie("CCUID", uid, { signed: true });
   // res.cookie("CCP", normalPass, { signed: true }); // Probably not secure but I will make it something else
   res.cookie("SID", uid, { signed: true });
@@ -212,6 +227,18 @@ module.exports = {
     const router = express.Router();
     router.use(express.urlencoded({ extended: false }));
     router.use(cookieParser(process.env.COOKIESECRET)); // For signed cookies
+
+    router.get("/api/@me", userAuth.authenticate({ redirect: "/" }), async (req, res) => {
+      if (req.isAuthenticated()) {
+        return res.status(200).send(req.userTraits);
+      }
+
+      return res.status(404).send({
+        error: {
+          message: "You are not logged in!"
+        }
+      });
+    });
 
     router.post("/signup", async (req, res) => {
       const { success, userData } = await userAuth.createUser(req.body);
@@ -242,6 +269,7 @@ module.exports = {
 
     return router;
   },
+  genID,
 
   userAuth
 }

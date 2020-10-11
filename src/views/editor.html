@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- defaultLibs %>
+  <title>Document</title>
+  <%- editorLibs %>
+  <script id="projectData" type="application/json">
+    <%- JSON.stringify(project) %>
+  </script>
+</head>
+<body>
+  
+  <header><!-- Top bar like in repl -->
+    <span><%= profile.username %> / <%= profile.clodeName %></span>
+    <div id="owner">IsOwner?: false</div>
+  </header>
+
+  <div class="grid-view"><!-- Sidebar, filetree, editor, console, output -->
+    <div id="tabs">
+      <span><img src="/imgs/icon-file.jpg" width="20" height="20" /></span>
+    </div>
+    <div id="sidebar" class="folder-root">
+      THESE ARE PLACEHOLDERS<br/>
+      <div type="file" name="index.js" path="/index.js">
+        <div class="content">
+          <span class="imgprefix"><img src="/imgs/icon-jslogo.svg" /></span>
+          <span class="itemname">index.js</span>
+          <div class="options">
+            <img src="/imgs/options.svg" />
+          </div>
+        </div>
+      </div>
+      <div type="folder" name="scripts" path="/scripts">
+        <div class="content">
+          <span class="imgprefix"><img src="/imgs/icon-folder.svg" /></span>
+          <span class="itemname">scripts</span>
+        </div>
+        <div class="nested">
+          <div type="file" name="test.js" path="/test.js">
+            <div class="content" style="padding-left: 14px">
+              <span class="imgprefix"><img src="/imgs/icon-jslogo.svg" /></span>
+              <span class="itemname">test.js</span>
+              <div class="options">
+                <img src="/imgs/options.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- Filetree or other data from selecting a tab -->
+
+    <div id="editor">Loading...</div><!-- Editor -->
+    <div id="terminal"></div><!-- Terminal -->
+  </div>
+
+  <%- defaultScripts %>
+  <% if (typeof user == "undefined" || !user.userData || profile.fulluser !== user.userData.fulluser) { %>
+  <script src="/js/ide/editorRO.js"></script>
+  <% } %>
+  <script src="/js/ide/editor.js"></script>
+  <script src="/js/ide/terminal.js"></script>
+</body>
+</html>

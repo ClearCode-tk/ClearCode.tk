@@ -3,15 +3,20 @@
 <head>
   <%- defaultLibs %>
   <title>Document</title>
+  <link rel="stylesheet" href="/css/cloder.css" type="text/css" />
 </head>
 <body>
   <%- include("data/navbar") %>
+  <%- include("data/clode.ejs") %>
   
   <h1 class = "center arvo inspiration"><span class = "pink">@</span><%= profile.username %></h1>
-  <p class = "center arvo name"><%= profile.firstname%> <%= profile.lastname%></p>
+  <p class = "center arvo name"><%= profile.firstname %> <%= profile.lastname %></p>
   <br/>
+
+  
   <p>Highlighted Clodes:</p>
 
   <%- defaultScripts %>
+  <script src="/js/profile.js"></script>
 </body>
 </html>

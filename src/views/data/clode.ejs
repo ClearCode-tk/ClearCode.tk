@@ -1,0 +1,25 @@
+<% if (typeof user == "object" && user.userData) { %>
+<a href="#" class="clode-create">Create Clode</a>
+<div class="bgoverlay"></div>
+
+<div id="createBox" class="clode-prompt">
+  <form class="fill" action="/createClode" method="POST">
+    <div class="inputs flex-container">
+      <div class="input-flex">
+        <label for="workspacename">Workspace Name</label>
+        <input type="text" name="workspacename" id="workspacename" required>
+      </div>
+      <div class="input-flex">
+        <label for="language">Language</label>
+        <select name="language" id="language" required>
+          <option value="" disabled selected>Select a Language</option>
+        </select>
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="button" class="button-neutral" onclick="closeCreator()">Cancel</button>
+      <button type="submit" class="button-success">Create</button>
+    </div>
+  </form>
+</div>
+<% } %>

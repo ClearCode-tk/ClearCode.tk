@@ -1,0 +1,226 @@
+/* Clode Creation */
+:root {
+  --nav-height: 48px;
+  --nav-dark: #333333;
+  --bg-dark: #212121;
+}
+
+.form { /* Changes the form and color */
+  text-align: center;
+
+  background-color: rgba(89, 100, 112, 0.301);
+  box-shadow: 1px 1px 3px 1.2px black;
+
+  font-family: 'Roboto Slab', serif;
+
+  padding: 4px;
+}
+
+.row-label  { /* Makes the row labels break instead of inline */
+  display: block;
+  color: black;
+
+  font-size: 22px;
+}
+
+.form label:not(.row-label) { /* Labels that aren't row-labels do this */
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.input { /* Make this class have line breaks and float left */
+  display: block;
+  float: left;
+  margin-right: 12px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.input input { /* Make inputs with parent of class input break onto new lines */
+  display: block;
+}
+
+/*
+   Test: // Label
+   input
+*/
+
+.input label { /* Parent input class break labels */
+  display: block;
+}
+
+.button-neutral { /* Different button type gray */
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  background-color: rgba(129, 124, 124, 0.322);
+  cursor: pointer;
+
+  transition: 200ms ease;
+  border: none;
+}
+
+.button-neutral:hover {
+  background-color: rgba(88, 84, 84, 0.459);
+  color: white;
+}
+
+.button-success {
+  padding: 6px 12px;
+  border: solid rgb(54, 54, 54) 2px;
+  border-radius: 8px;
+
+  background-color: rgba(85, 197, 62, 0.459);
+  cursor: pointer;
+
+  transition: 200ms ease;
+}
+
+.button-success:hover {
+  background-color: rgba(69, 148, 51, 0.712);
+  color: white;
+}
+
+.btn {
+  display: block;
+  padding: 12px;
+
+  border: none;
+  background-color: rgba(79, 177, 60, 0.911);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgba(77, 184, 55, 0.89);
+}
+
+.row { /* Creates new row */
+  display: inline-block;
+  
+  padding: 10px 15px;
+  margin-bottom: 20px;
+}
+
+.row input { /* Makes inputs in a row block and style */
+  display: block;
+  position: relative;
+
+  margin: auto;
+  margin-top: 10px;
+  padding: 6px;
+
+  border: 2px solid rgba(128, 128, 128, 0.541);
+  border-radius: 4px;
+
+  text-align: start;
+
+  outline: none;
+}
+
+.row input:focus { /* When focused outline none and shadow */
+  outline: none;
+  box-shadow: 0 0.2px 3px 2px rgb(69, 120, 179);
+}
+
+.flex-container {
+  display: flex;
+
+  flex: 1 0 auto;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.inputs {
+  padding: 10px;
+  width: 100%;
+}
+
+.buttons {
+  padding: 10px;
+  width: 100%;
+}
+
+/* Flex inputs */
+/* Side by side inputs */
+
+.input-flex {
+  flex: 1 1 auto;
+
+  width: 50%;
+  margin-bottom: 0;
+  margin-right: 12px;
+}
+
+.input-flex label {
+  display: block;
+}
+
+.input-flex input {
+  width: 100%;
+  padding: 15px 30px 15px 10px;
+
+  background-color: #5e5e5ed2;
+
+  border: solid rgba(131, 131, 131, 0.719) 0.5px;
+  border-radius: 2px;
+
+  outline: none;
+}
+
+.input-flex input:focus {
+  box-shadow: 5px 2px 23px 6px #0c1633d8;
+}
+
+.input-flex select {
+  width: 100%;
+  padding: 14px 30px 14px 10px;
+
+  border: solid rgba(131, 131, 131, 0.719) 0.5px;
+  border-radius: 2px;
+
+  outline: none;
+}
+
+/* Background overlay to make background become darker to focus on the creation */
+.bgoverlay {
+  display: none;
+  position: absolute;
+  z-index: 12;
+
+  width: 100vw;
+  height: 100vh;
+
+  top: 0;
+  left: 0;
+
+  background-color: black;
+  opacity: 0.479;
+}
+
+/* The main prompt wrapper */
+/* Center to the screen */
+.clode-prompt {
+  position: absolute;
+  display: none;
+  z-index: 13;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 32vw;
+  height: 40vh;
+
+  background-color: var(--bg-dark);
+
+  border: solid transparent 2px;
+  border-radius: 5px;
+}
+
+/* Fill the form */
+.fill {
+  width: 100%;
+  height: 100%;
+}
