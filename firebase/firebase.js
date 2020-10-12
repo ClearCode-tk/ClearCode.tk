@@ -61,7 +61,7 @@ async function createProject(clodeName, language, traits) {
 
   const projectList = projects.doc(fulluser);
   const list = await projectList.get();
-  const userProjects = list.data();
+  let userProjects = list.data();
 
   const project = (typeof userProjects == "object") ? userProjects[clodeName] : null;
 
