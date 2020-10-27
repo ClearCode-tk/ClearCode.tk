@@ -17,7 +17,7 @@
 
   <div class="grid-view"><!-- Sidebar, filetree, editor, console, output -->
     <div id="tabs">
-      <span><img src="/imgs/icon-file.jpg" width="20" height="20" /></span>
+      <svg class="activity-icon"><image xlink:href="/imgs/icon-file.svg" /></svg>
     </div>
     <div id="sidebar" class="folder-root">
       THESE ARE PLACEHOLDERS<br/>
@@ -47,16 +47,14 @@
           </div>
         </div>
       </div>
-    </div><!-- Filetree or other data from selecting a tab -->
+    </div>
+    <!-- Filetree or other data from selecting a tab -->
 
     <div id="editor">Loading...</div><!-- Editor -->
     <div id="terminal"></div><!-- Terminal -->
   </div>
 
   <%- defaultScripts %>
-  <% if (typeof user == "undefined" || !user.userData || profile.fulluser !== user.userData.fulluser) { %>
-  <script src="/js/ide/editorRO.js"></script>
-  <% } %>
   <script src="/js/ide/editor.js"></script>
   <script src="/js/ide/terminal.js"></script>
 </body>

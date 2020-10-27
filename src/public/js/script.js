@@ -12,7 +12,7 @@ window.mobileCheck = function() {
 const mobileLinks = document.querySelector("#mobile-links");
 const navBurger = document.querySelector(".nav-burger");
 
-navBurger ?.addEventListener(
+navBurger?.addEventListener(
   "click",
   () => {
     mobileLinks.style.setProperty(

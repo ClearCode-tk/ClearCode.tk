@@ -5,14 +5,8 @@ const updateFile = require('../middleware/updateFile');
 function webSockets(io) {
 	io.on('connection', socket => {
 		analyticsFile.pageViews++;
-    analyticsFile.usersOnline++;
 
     updateFile(fs, './analytics/analytics.json', analyticsFile);
-
-  socket.on('disconnect', socket => {
-    analyticsFile.usersOnline--;
-    updateFile(fs, './analytics/analytics.json', analyticsFile);
-  });
 	});
 }
 

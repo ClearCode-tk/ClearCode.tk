@@ -6,17 +6,30 @@
   <link rel="stylesheet" href="/css/cloder.css" type="text/css" />
 </head>
 <body>
+  <script id="userInfo" type="application/json">
+    <% if (typeof profile == "object" ) { %>
+      <%- JSON.stringify(profile) %>
+    <% } %>
+  </script>
   <%- include("data/navbar") %>
-  <%- include("data/clode.ejs") %>
   
-  <h1 class = "center arvo inspiration"><span class = "pink">@</span><%= profile.username %></h1>
-  <p class = "center arvo name"><%= profile.firstname %> <%= profile.lastname %></p>
-  <br/>
+  <div class="user-info"> 
+    <a href="/<%= profile.username %>/edit">
+      <i class="material-icons settings-btn">settings</i>
+    </a>  
+    <h1 class = "center arvo inspiration"><span class = "yellow">@</span><%= profile.username %></h1>
+    <div class="profile-picture-container">
+      <img class="profile-picture" src="/imgs/logo.jpeg">
+    </div> 
+    <p class = "center arvo name"><%= profile.firstname %> <%= profile.lastname %></p>
+    <br/>
+  </div>
+    <%- include("data/clode.ejs") %>
+    
+    <h1 class="center josefin">Clodes</h1>
+    <div class="clodes"></div>
 
-  
-  <p>Highlighted Clodes:</p>
-
-  <%- defaultScripts %>
+    <%- defaultScripts %>
   <script src="/js/profile.js"></script>
 </body>
 </html>

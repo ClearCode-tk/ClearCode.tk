@@ -1,4 +1,4 @@
-const { dbURL, db, users } = require('../firebase/firebase'); // Import db
+const { dbURL, db, users, functions: { getProjects } } = require('../firebase/firebase'); // Import db
 const express = require('express'),
 	cookieParser = require('cookie-parser');
 
@@ -42,6 +42,14 @@ function mainPages() {
 		RenderPage(res, 'signin.html');
 	});
 
+  router.get('/about', (_, res) => {
+		RenderPage(res, 'about.html');
+	});
+
+  router.get('/resources', (_, res) => {
+		RenderPage(res, 'resources.html');
+	});
+
 	router.get('/404', (_, res) => {
 		RenderPage(res, '404.html');
 	});
@@ -58,8 +66,10 @@ function mainPages() {
 			// res.redirect('/404')
 		}
 
-		userSnapshot.forEach(userDoc => {
+		userSnapshot.forEach(async userDoc => {
 			const userData = userDoc.data();
+      userData.projects = await getProjects(userData.fulluser);
+
 			if (!userData || !userDoc || headersSent) return;
 
 			if (uid) {
@@ -68,6 +78,7 @@ function mainPages() {
 					if (req.isAuthenticated()) {
 						return RenderPage(res, 'profile.html', {
 							profile: userData,
+              projects: await getProjects(userData.fulluser),
 							user: {
 								// Request user
 								userData: req.userTraits
@@ -93,9 +104,22 @@ function mainPages() {
 				});
 			}
 
-			return RenderPage(res, 'profile.html', { profile: userData });
+			return RenderPage(res, 'profile.html', {
+        profile: userData,
+      });
+
 		});
 	});
+
+  router.get("/profile/edit", (req, res, next) => {
+    if (req.isAuthenticated()) {
+      return RenderPage(res, 'edit-profile.html', {
+        profile: req.userTraits
+      });
+    } else {
+      res.redirect("/");
+    }
+  });
 
 	router.get('/ide', userAuth.authenticate({ redirect: '/' }), (req, res) => {
 		RenderPage(res, 'editor.html');

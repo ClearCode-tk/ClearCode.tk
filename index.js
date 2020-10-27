@@ -32,6 +32,7 @@ app.use(handleErrors);
 app.use(handle404);
 //socket.io events
 require('./websockets/analytics')(io);
+require("./websockets/vmapi.js")(io.of("/api"));
 
 server.listen(port, _ => console.log('Listening on port %s', port));
 

@@ -106,6 +106,17 @@ async function getProject(username, clodeName) {
   return project;
 }
 
+async function getProjects(username) {
+  const projectList = projects.doc(username);
+
+  if (!projectList) return {};
+
+  const list = await projectList.get();
+  const userProjects = list.data();
+  
+  return userProjects || {};
+}
+
 async function getUser(username) {
   const user = users.doc(username);
   const userInfo = await user.get();
@@ -124,6 +135,7 @@ module.exports = {
   functions: {
     createProject,
     getProject,
+    getProjects,
     getUser,
     genID
   },

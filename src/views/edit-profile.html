@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- defaultLibs %>
+  <title>Document</title>
+</head>
+<body>
+  <%- include("data/navbar") %>
+  
+  <h1 class='center vietnam'>Edit Profile</h1>
+  <form id="signin-form" class="form card" action="/signin" method="POST">
+    <span>First Name: <br/><input type="text" id="signin-fname" name="first-name" placeholder="Enter First Name" /></span><br/>
+    <span>Last Name: <br/><input type="text" id="signin-fname" name="last-name" placeholder="Enter Last Name" /></span><br/>
+
+    <button type="submit">Sign In</button>
+  </form>
+</body>
+</html>

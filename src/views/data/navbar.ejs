@@ -1,12 +1,12 @@
 <header class = "navbar">
   <span class = "navbar-title">
-    <a href="/">ClearCode<span class = "domain">.tk</span></a>
+    <a href="/">ClearCode<span class = "yellow">.tk</span></a>
   </span>
   
   <nav class = "nav-items">
-    <a href="#" class="nav-item">Home</a>
-    <a href="#" class="nav-item">About</a>
-    <a href="#" class="nav-item">Resources</a>
+    <a href="/" class="nav-item">Home</a>
+    <a href="/about" class="nav-item">About</a>
+    <a href="/resources" class="nav-item">Resources</a>
     <% if (typeof user !== "object" || !user.userData) { %>
       <a href="/signup" class="signin-btn nav-item">Sign Up/In</a>
     <% } else { %>
@@ -17,8 +17,8 @@
 </header>
 <section id="mobile-links">
   <a href="/">Home</a>
-  <a href="#">About</a>
-  <a href="#">Resources</a>
+  <a href="/about">About</a>
+  <a href="/resources">Resources</a>
   <% if (typeof user !== "object" || !user.userData) { %>
     <a href="/signup" class="signin-btn">Sign Up/In</a>
   <% } else { %>

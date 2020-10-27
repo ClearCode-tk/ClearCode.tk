@@ -1,5 +1,7 @@
 <% if (typeof user == "object" && user.userData) { %>
-<a href="#" class="clode-create">Create Clode</a>
+<div class="clode-create-container">
+  <button class="clode-create">Create Clode</button>
+</div>
 <div class="bgoverlay"></div>
 
 <div id="createBox" class="clode-prompt">
@@ -17,7 +19,7 @@
       </div>
     </div>
     <div class="buttons">
-      <button type="button" class="button-neutral" onclick="closeCreator()">Cancel</button>
+      <button type="button" id="clode-cancel" class="button-neutral">Cancel</button>
       <button type="submit" class="button-success">Create</button>
     </div>
   </form>

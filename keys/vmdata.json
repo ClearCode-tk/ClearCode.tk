@@ -1,0 +1,12 @@
+{
+  "Machines": {
+    "Available": {
+      "72c6c1addd88": {
+        "hostname": "72c6c1addd88",
+        "wss": "testurl:5512",
+        "allowConnection": false
+      }
+    },
+    "Unavailable": {}
+  }
+}

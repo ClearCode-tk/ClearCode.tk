@@ -31,9 +31,11 @@
 .input { /* Make this class have line breaks and float left */
   display: block;
   float: left;
+  
   margin-right: 12px;
   margin-top: 15px;
   width: 100%;
+  font-size: 16px;
 }
 
 .input input { /* Make inputs with parent of class input break onto new lines */
@@ -67,7 +69,7 @@
 
 .button-success {
   padding: 6px 12px;
-  border: solid rgb(54, 54, 54) 2px;
+  border: none;
   border-radius: 8px;
 
   background-color: rgba(85, 197, 62, 0.459);
@@ -85,8 +87,10 @@
   display: block;
   padding: 12px;
 
-  border: none;
+  border: none !important;
   background-color: rgba(79, 177, 60, 0.911);
+
+
   cursor: pointer;
 }
 
@@ -140,6 +144,7 @@
 .buttons {
   padding: 10px;
   width: 100%;
+  text-align: center;
 }
 
 /* Flex inputs */
@@ -159,13 +164,14 @@
 
 .input-flex input {
   width: 100%;
-  padding: 15px 30px 15px 10px;
+  padding: 4px 6px;
+
+  margin-top: 6px;
 
   background-color: #5e5e5ed2;
+  border-radius: 6px;
 
-  border: solid rgba(131, 131, 131, 0.719) 0.5px;
-  border-radius: 2px;
-
+  border: none;
   outline: none;
 }
 
@@ -175,12 +181,14 @@
 
 .input-flex select {
   width: 100%;
-  padding: 14px 30px 14px 10px;
+  padding: 4px 6px;
 
-  border: solid rgba(131, 131, 131, 0.719) 0.5px;
-  border-radius: 2px;
+  border: none;
+  margin-top: 6px;
+  border-radius: 6px;
 
   outline: none;
+  font-size: 16px;
 }
 
 /* Background overlay to make background become darker to focus on the creation */
@@ -205,13 +213,14 @@
   position: absolute;
   display: none;
   z-index: 13;
+  text-align: center;
 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   width: 32vw;
-  height: 40vh;
+  padding: 24px;
 
   background-color: var(--bg-dark);
 
@@ -224,3 +233,9 @@
   width: 100%;
   height: 100%;
 }
+
+#workspacename {
+  font-size: 16px !important;
+  color: white; 
+}
+

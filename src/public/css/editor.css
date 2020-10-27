@@ -7,7 +7,7 @@ body > header {
   width: 100vw;
   height: 64px;
 
-  background-color: orange;
+  background-color: #444;
 }
 
 .grid-view {
@@ -20,19 +20,19 @@ body > header {
 }
 
 #tabs {
-  background-color: rgba(235, 47, 0, 0.945);
+  background-color: #21212163;
 }
 
 #sidebar {
-  background-color: rgba(74, 235, 0, 0.945);
+  background-color: #333;
 }
 
 #editor {
-  background-color: rgba(29, 58, 136, 0.945);
+
 }
 
 #terminal {
-  background-color: rgba(54, 46, 44, 0.945);
+  background-color: #151515
 }
 
 /* File Explorer */
@@ -125,4 +125,8 @@ body > header {
 
 .selected {
   background-color: rgba(139, 165, 165, 0.904);
+}
+
+#activity-icon {
+  color: white;
 }
